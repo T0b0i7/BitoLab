@@ -6,6 +6,7 @@ import ImageUploader from './components/ImageUploader';
 import Editor from './components/Editor';
 import Loader from './components/Loader';
 import WelcomeScreen from './components/WelcomeScreen';
+import Footer from './components/Footer';
 
 const App: React.FC = () => {
   const [appState, setAppState] = useState<'welcome' | 'main'>('welcome');
@@ -82,7 +83,7 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900/40 to-gray-900 text-gray-200 font-sans">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900/40 to-gray-900 text-gray-200 font-sans flex flex-col">
       {isLoading && <Loader />}
       <AnimatePresence mode="wait">
         {appState === 'welcome' ? (
@@ -94,9 +95,10 @@ const App: React.FC = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
+            className="flex flex-col flex-grow"
           >
             <Header />
-            <main className="container mx-auto px-4 py-8 md:py-12">
+            <main className="container mx-auto px-4 py-8 md:py-12 flex-grow">
               <AnimatePresence mode="wait">
                 {!originalImage ? (
                   <motion.div
@@ -139,6 +141,7 @@ const App: React.FC = () => {
                   </motion.div>
               )}
             </main>
+            <Footer />
           </motion.div>
         )}
       </AnimatePresence>
