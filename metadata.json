@@ -1,0 +1,5 @@
+{
+  "name": "Éditeur Photo IA BitoLab",
+  "description": "Une application web intelligente de retouche photo qui utilise Gemini pour modifier des images à partir d'invites textuelles. Les utilisateurs peuvent télécharger une image, appliquer des modifications en langage naturel et comparer les résultats avec un curseur avant/après.",
+  "requestFramePermissions": []
+}
